@@ -1,5 +1,4 @@
 import sys
-import zipfile
 
 from lxml import etree
 
