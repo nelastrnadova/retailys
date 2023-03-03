@@ -35,10 +35,10 @@ class Export:
                 yield item
 
     def item_to_string(self, item: etree._Element) -> str:
-        tmp_code = item.xpath("@code")[0]
-        tmp_name = item.xpath("@name")[0]
+        tmp_code = item.xpath("@code")
+        tmp_name = item.xpath("@name")
         if len(tmp_name) and len(tmp_code):
-            return f"{tmp_code}: {tmp_name}"
+            return f"{tmp_code[0]}: {tmp_name[0]}"
         sys.exit(-1)  # TODO: error handling if no name
 
     def full_flow(self):  # TODO: yeah
